@@ -210,9 +210,10 @@
         "id": "RPT-AC-005",
         "criterion": "전문 용어를 사용할 경우 쉬운 설명을 붙인다.",
         "evidence": {
-          "status": "planned",
+          "status": "automated",
           "type": "application-test",
-          "target": "domain term explanation"
+          "target": "placeholder report avoids unexplained domain terms",
+          "command": "npm run test:evidence"
         }
       }
     ]

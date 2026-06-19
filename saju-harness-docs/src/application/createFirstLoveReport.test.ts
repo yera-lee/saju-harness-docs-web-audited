@@ -43,6 +43,7 @@ describe("createFirstLoveReport", () => {
     expect(report.data.sections.length).toBeGreaterThanOrEqual(5);
     expect(report.data.sections.at(-1)?.key).toBe("compatibility_cta");
     expect(report.data.safety_status).toBe("passed");
+    expect(report.data.sections.map((section) => section.body).join("\n")).not.toMatch(/일주|월주|시주|오행|십신/);
 
     const chart = await repositories.charts.findByBirthProfileId(profile.data.id);
     expect(chart?.chart_json.hour_pillar).toBeNull();

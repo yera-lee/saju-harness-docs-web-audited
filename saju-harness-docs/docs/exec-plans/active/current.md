@@ -157,7 +157,7 @@ Completed:
 - safe API error shape
 - Vitest test setup
 - Playwright desktop/mobile E2E setup
-- automated evidence for 20 acceptance criteria
+- automated evidence for 21 acceptance criteria
 
 Verified:
 - `npm run test:evidence`: PASS
@@ -181,3 +181,4 @@ Current risks:
 - in-memory repositories are not suitable for public release
 - report access control is documented but only placeholder-level in code
 - E2E tests cover browser flow, but persistence and authorization remain placeholder-level
+- Placeholder report tests cover unexplained domain term avoidance, not full glossary enforcement
