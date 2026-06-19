@@ -1,0 +1,200 @@
+{
+  "version": 1,
+  "sources": {
+    "docs/exec-plans/active/current.md": [
+      {
+        "id": "MVP-AC-001",
+        "criterion": "사용자는 출생시간을 몰라도 진행 가능하다.",
+        "evidence": {
+          "status": "planned",
+          "type": "application-test",
+          "target": "onboarding birth_time_unknown flow"
+        }
+      },
+      {
+        "id": "MVP-AC-002",
+        "criterion": "잘못된 날짜 입력 시 에러 메시지가 표시된다.",
+        "evidence": {
+          "status": "planned",
+          "type": "application-test",
+          "target": "birth_date validation"
+        }
+      },
+      {
+        "id": "MVP-AC-003",
+        "criterion": "제출 후 분석 로딩 화면으로 이동한다.",
+        "evidence": {
+          "status": "planned",
+          "type": "application-test",
+          "target": "onboarding submit navigation"
+        }
+      },
+      {
+        "id": "MVP-AC-004",
+        "criterion": "생성된 리포트는 사용자 닉네임을 포함한다.",
+        "evidence": {
+          "status": "planned",
+          "type": "application-test",
+          "target": "report personalization"
+        }
+      },
+      {
+        "id": "MVP-AC-005",
+        "criterion": "리포트에는 연애 성향과 반복되는 관계 패턴이 포함된다.",
+        "evidence": {
+          "status": "planned",
+          "type": "application-test",
+          "target": "first report sections"
+        }
+      },
+      {
+        "id": "MVP-AC-006",
+        "criterion": "리포트 끝에는 궁합 CTA가 표시된다.",
+        "evidence": {
+          "status": "planned",
+          "type": "application-test",
+          "target": "compatibility CTA placement"
+        }
+      },
+      {
+        "id": "MVP-AC-007",
+        "criterion": "생성 실패 시 재시도 버튼이 표시된다.",
+        "evidence": {
+          "status": "planned",
+          "type": "application-test",
+          "target": "report generation failure state"
+        }
+      },
+      {
+        "id": "MVP-AC-008",
+        "criterion": "원시 API 오류가 사용자에게 노출되지 않는다.",
+        "evidence": {
+          "status": "planned",
+          "type": "application-test",
+          "target": "user-facing error copy"
+        }
+      },
+      {
+        "id": "MVP-AC-009",
+        "criterion": "단정적 예언 문장이 결과에 포함되지 않는다.",
+        "evidence": {
+          "status": "planned",
+          "type": "policy-check",
+          "target": "safety language filter"
+        }
+      }
+    ],
+    "docs/product-specs/new-user-onboarding.md": [
+      {
+        "id": "ONB-AC-001",
+        "criterion": "사용자는 출생시간을 몰라도 진행할 수 있다.",
+        "evidence": {
+          "status": "planned",
+          "type": "application-test",
+          "target": "birth_time_unknown flow"
+        }
+      },
+      {
+        "id": "ONB-AC-002",
+        "criterion": "잘못된 날짜 입력 시 명확한 에러 메시지가 표시된다.",
+        "evidence": {
+          "status": "planned",
+          "type": "application-test",
+          "target": "invalid birth_date message"
+        }
+      },
+      {
+        "id": "ONB-AC-003",
+        "criterion": "제출 후 분석 로딩 화면이 표시된다.",
+        "evidence": {
+          "status": "planned",
+          "type": "application-test",
+          "target": "loading route or state"
+        }
+      },
+      {
+        "id": "ONB-AC-004",
+        "criterion": "분석 완료 후 첫 리포트 화면으로 이동한다.",
+        "evidence": {
+          "status": "planned",
+          "type": "application-test",
+          "target": "report completion navigation"
+        }
+      },
+      {
+        "id": "ONB-AC-005",
+        "criterion": "리포트에는 사용자 닉네임이 반영된다.",
+        "evidence": {
+          "status": "planned",
+          "type": "application-test",
+          "target": "nickname rendering"
+        }
+      },
+      {
+        "id": "ONB-AC-006",
+        "criterion": "리포트 말미에 궁합 CTA가 표시된다.",
+        "evidence": {
+          "status": "planned",
+          "type": "application-test",
+          "target": "compatibility CTA rendering"
+        }
+      },
+      {
+        "id": "ONB-AC-007",
+        "criterion": "생성 실패 시 재시도 버튼이 표시된다.",
+        "evidence": {
+          "status": "planned",
+          "type": "application-test",
+          "target": "retry button failure state"
+        }
+      }
+    ],
+    "docs/product-specs/first-love-pattern-report.md": [
+      {
+        "id": "RPT-AC-001",
+        "criterion": "리포트는 최소 5개 섹션을 포함한다.",
+        "evidence": {
+          "status": "planned",
+          "type": "application-test",
+          "target": "report section count"
+        }
+      },
+      {
+        "id": "RPT-AC-002",
+        "criterion": "리포트는 사용자 닉네임을 포함한다.",
+        "evidence": {
+          "status": "planned",
+          "type": "application-test",
+          "target": "report nickname content"
+        }
+      },
+      {
+        "id": "RPT-AC-003",
+        "criterion": "리포트는 궁합 CTA로 끝난다.",
+        "evidence": {
+          "status": "planned",
+          "type": "application-test",
+          "target": "last section compatibility CTA"
+        }
+      },
+      {
+        "id": "RPT-AC-004",
+        "criterion": "모든 문장은 단정적 예언이 아니라 해석형 표현이어야 한다.",
+        "evidence": {
+          "status": "planned",
+          "type": "policy-check",
+          "target": "report safety rewrite"
+        }
+      },
+      {
+        "id": "RPT-AC-005",
+        "criterion": "전문 용어를 사용할 경우 쉬운 설명을 붙인다.",
+        "evidence": {
+          "status": "planned",
+          "type": "application-test",
+          "target": "domain term explanation"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "hard_forbidden": [
+    "반드시 헤어진다",
+    "반드시 이별",
+    "결혼운이 없다",
+    "이 사람과 만나면 불행해진다",
+    "올해 큰 사고",
+    "건강에 큰 문제",
+    "돈을 잃는다",
+    "절대 만나면 안 된다",
+    "운명이 정해져 있다"
+  ],
+  "soft_forbidden": [
+    "반드시",
+    "절대",
+    "무조건",
+    "이별수",
+    "사망",
+    "파산",
+    "범죄 피해",
+    "투자 손실",
+    "이혼 확정",
+    "결혼 확정"
+  ],
+  "ignored_files": [
+    "AGENTS.md",
+    "CONSTITUTION.md",
+    "docs/QUALITY_SCORE.md",
+    "docs/PRODUCT_SENSE.md",
+    "docs/SECURITY.md",
+    "docs/design-docs/core-beliefs.md",
+    "docs/domain/interpretation-style.md",
+    "docs/product-specs/index.md",
+    "docs/product-specs/first-love-pattern-report.md",
+    "docs/harness/safety-evaluation.md",
+    "harness/policies/forbidden_expressions.json"
+  ]
+}
