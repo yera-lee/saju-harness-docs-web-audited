@@ -151,20 +151,19 @@ Priority:
 
 ### TD-010: E2E Browser Regression Tests
 
-Status: open
+Status: closed
 
 Current:
 - Unit and contract tests cover validation, safety, placeholder report structure, safe API errors, and handler-level onboarding-to-report flow.
+- Playwright covers desktop and mobile Chrome for onboarding validation, onboarding -> analyzing -> generated report, CTA visibility, and retry button failure state.
 - Dev HTTP smoke has verified route availability and generated report read path.
 
-Needed:
-- browser test for landing to onboarding
-- browser test for onboarding validation error
-- browser test for analyzing/report/CTA path
-- mobile viewport smoke check
+Evidence:
+- `npm run test:e2e`
+- `make application-harness-check`
 
 Priority:
-- High before MVP release
+- Completed in Slice 1 implementation loop
 
 ### TD-011: Session-Bound Report Access Implementation
 

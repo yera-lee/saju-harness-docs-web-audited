@@ -156,10 +156,12 @@ Completed:
 - report page loads by generated `reportId`
 - safe API error shape
 - Vitest test setup
-- automated evidence for 15 acceptance criteria
+- Playwright desktop/mobile E2E setup
+- automated evidence for 20 acceptance criteria
 
 Verified:
 - `npm run test:evidence`: PASS
+- `npm run test:e2e`: PASS
 - `npm test`: PASS
 - `npm run build`: PASS
 - `npm audit --json`: 0 vulnerabilities
@@ -171,7 +173,6 @@ Verified:
 Remaining:
 - production persistence
 - real guest session authorization
-- browser E2E regression tests for the full client navigation path
 - real saju calculation engine
 - LLM report generation
 - full compatibility report
@@ -179,4 +180,4 @@ Remaining:
 Current risks:
 - in-memory repositories are not suitable for public release
 - report access control is documented but only placeholder-level in code
-- analyzing retry UI is implemented, but only handler-level failure behavior is automated
+- E2E tests cover browser flow, but persistence and authorization remain placeholder-level

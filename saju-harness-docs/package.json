@@ -8,6 +8,7 @@
     "start": "next start",
     "test": "vitest run",
     "test:evidence": "vitest run src/domain/validation.test.ts src/domain/safety.test.ts src/application/createFirstLoveReport.test.ts src/app/api/birth-profiles/route.test.ts",
+    "test:e2e": "playwright test",
     "test:watch": "vitest",
     "lint": "next lint"
   },
@@ -17,6 +18,7 @@
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.61.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.3.0",
     "@types/node": "^22.10.7",

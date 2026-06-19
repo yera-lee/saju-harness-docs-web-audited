@@ -26,9 +26,10 @@
         "id": "MVP-AC-003",
         "criterion": "제출 후 분석 로딩 화면으로 이동한다.",
         "evidence": {
-          "status": "planned",
+          "status": "automated",
           "type": "application-test",
-          "target": "onboarding submit navigation"
+          "target": "onboarding submit navigation",
+          "command": "npm run test:e2e"
         }
       },
       {
@@ -65,9 +66,10 @@
         "id": "MVP-AC-007",
         "criterion": "생성 실패 시 재시도 버튼이 표시된다.",
         "evidence": {
-          "status": "planned",
+          "status": "automated",
           "type": "application-test",
-          "target": "report generation failure state"
+          "target": "report generation failure state",
+          "command": "npm run test:e2e"
         }
       },
       {
@@ -116,18 +118,20 @@
         "id": "ONB-AC-003",
         "criterion": "제출 후 분석 로딩 화면이 표시된다.",
         "evidence": {
-          "status": "planned",
+          "status": "automated",
           "type": "application-test",
-          "target": "loading route or state"
+          "target": "loading route or state",
+          "command": "npm run test:e2e"
         }
       },
       {
         "id": "ONB-AC-004",
         "criterion": "분석 완료 후 첫 리포트 화면으로 이동한다.",
         "evidence": {
-          "status": "planned",
+          "status": "automated",
           "type": "application-test",
-          "target": "report completion navigation"
+          "target": "report completion navigation",
+          "command": "npm run test:e2e"
         }
       },
       {
@@ -154,9 +158,10 @@
         "id": "ONB-AC-007",
         "criterion": "생성 실패 시 재시도 버튼이 표시된다.",
         "evidence": {
-          "status": "planned",
+          "status": "automated",
           "type": "application-test",
-          "target": "retry button failure state"
+          "target": "retry button failure state",
+          "command": "npm run test:e2e"
         }
       }
     ],
