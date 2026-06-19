@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Saju Chart JSON",
+  "type": "object",
+  "required": [
+    "year_pillar",
+    "month_pillar",
+    "day_pillar",
+    "hour_pillar",
+    "day_master",
+    "five_elements_distribution",
+    "ten_gods_distribution",
+    "calculation_warnings"
+  ],
+  "properties": {
+    "year_pillar": { "$ref": "#/$defs/pillar" },
+    "month_pillar": { "$ref": "#/$defs/pillar" },
+    "day_pillar": { "$ref": "#/$defs/pillar" },
+    "hour_pillar": {
+      "anyOf": [
+        { "$ref": "#/$defs/pillar" },
+        { "type": "null" }
+      ]
+    },
+    "day_master": { "type": "string" },
+    "five_elements_distribution": {
+      "type": "object",
+      "required": ["wood", "fire", "earth", "metal", "water"],
+      "properties": {
+        "wood": { "type": "number" },
+        "fire": { "type": "number" },
+        "earth": { "type": "number" },
+        "metal": { "type": "number" },
+        "water": { "type": "number" }
+      },
+      "additionalProperties": false
+    },
+    "ten_gods_distribution": { "type": "object" },
+    "calculation_warnings": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "birth_time_unknown",
+          "lunar_conversion_uncertain",
+          "timezone_defaulted",
+          "edge_case_near_day_boundary",
+          "unsupported_date_range"
+        ]
+      }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "pillar": {
+      "type": "object",
+      "required": ["heavenly_stem", "earthly_branch"],
+      "properties": {
+        "heavenly_stem": { "type": "string" },
+        "earthly_branch": { "type": "string" }
+      },
+      "additionalProperties": false
+    }
+  }
+}

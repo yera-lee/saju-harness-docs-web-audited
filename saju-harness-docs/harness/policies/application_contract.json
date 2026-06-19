@@ -1,0 +1,49 @@
+{
+  "platform": "responsive-web",
+  "required_routes": [
+    "/",
+    "/onboarding",
+    "/analyzing",
+    "/reports/:reportId",
+    "/compatibility/start",
+    "/error"
+  ],
+  "required_states": [
+    "idle",
+    "editing",
+    "validating",
+    "submitting",
+    "generating_report",
+    "success",
+    "error"
+  ],
+  "required_onboarding_fields": [
+    "nickname",
+    "birth_date",
+    "calendar_type",
+    "birth_time",
+    "birth_time_unknown",
+    "gender",
+    "interests"
+  ],
+  "required_report_sections": [
+    "one_line_summary",
+    "love_style",
+    "attraction_pattern",
+    "repeating_relationship_pattern",
+    "relationship_advice",
+    "compatibility_cta"
+  ],
+  "user_error_policy": {
+    "must_not_expose": [
+      "LLM API timeout",
+      "500 internal server error",
+      "stack trace",
+      "raw provider error"
+    ],
+    "must_offer_retry_for": [
+      "report_generation_failure",
+      "network_failure"
+    ]
+  }
+}

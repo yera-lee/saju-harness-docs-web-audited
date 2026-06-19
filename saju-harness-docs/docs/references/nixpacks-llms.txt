@@ -1,0 +1,3 @@
+# Reference Placeholder
+
+배포 환경으로 Nixpacks를 사용할 경우 관련 설정과 제약을 이 파일에 정리한다.
