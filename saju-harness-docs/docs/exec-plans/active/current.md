@@ -132,3 +132,48 @@ After implementation, update:
 
 Before implementation, use:
 - docs/implementation/slice-1-plan.md
+
+## Current Implementation Status
+
+Updated: 2026-06-19
+
+Completed:
+- Next.js TypeScript app scaffold
+- Tailwind setup
+- required route skeletons
+- responsive landing page
+- responsive onboarding form
+- validation helpers
+- repository interfaces and in-memory adapters
+- placeholder calculation engine
+- placeholder interpretation engine
+- safety scanner/reviewer
+- report rendering page
+- compatibility CTA page
+- API route handlers for birth profile and first report flow
+- safe API error shape
+- Vitest test setup
+- automated evidence for 15 acceptance criteria
+
+Verified:
+- `npm run test:evidence`: PASS
+- `npm test`: PASS
+- `npm run build`: PASS
+- `npm audit --json`: 0 vulnerabilities
+- `make harness-check`: PASS
+- `make application-harness-check`: PASS
+
+Remaining:
+- production persistence
+- real guest session authorization
+- report generation failure UI and retry behavior beyond placeholder route
+- e2e/browser regression tests
+- real saju calculation engine
+- LLM report generation
+- full compatibility report
+
+Current risks:
+- in-memory repositories are not suitable for public release
+- report page currently renders a demo placeholder report
+- onboarding submit currently routes to analyzing without calling the API
+- report access control is documented but only placeholder-level in code

@@ -31,13 +31,18 @@ def main() -> int:
     print()
 
     failures = []
+    command_groups = {}
     for source, entry in automated:
         command = entry["evidence"].get("command")
         if not command:
             failures.append(f"{entry['id']} is automated but has no command.")
             continue
+        command_groups.setdefault(command, []).append((source, entry))
 
-        print(f"RUN  {entry['id']} {entry['evidence']['target']}")
+    for command, entries in command_groups.items():
+        ids = ", ".join(entry["id"] for _, entry in entries)
+        print(f"RUN  {ids}")
+        print(f"     command: {command}")
         completed = subprocess.run(
             shlex.split(command),
             cwd=ROOT,
@@ -49,7 +54,7 @@ def main() -> int:
         if completed.stdout.strip():
             print(indent(completed.stdout.strip()))
         if completed.returncode != 0:
-            failures.append(f"{entry['id']} failed with exit code {completed.returncode}: {command}")
+            failures.append(f"{ids} failed with exit code {completed.returncode}: {command}")
 
     print(f"Automated evidence: {len(automated)}")
     print(f"Manual evidence: {manual}")

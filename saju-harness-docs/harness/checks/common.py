@@ -29,7 +29,8 @@ def read_text(root: Path, relative_path: str) -> str:
 
 
 def iter_markdown_files(root: Path) -> list[Path]:
-    return sorted(path for path in root.rglob("*.md") if ".git" not in path.parts)
+    ignored_dirs = {".git", "node_modules", ".next", "coverage"}
+    return sorted(path for path in root.rglob("*.md") if ignored_dirs.isdisjoint(path.parts))
 
 
 def markdown_list_items(section_text: str) -> list[str]:
@@ -67,4 +68,3 @@ def extract_section(text: str, heading: str) -> str:
 
 def heading_level_of(line: str) -> int:
     return len(line) - len(line.lstrip("#"))
-

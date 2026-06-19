@@ -17,8 +17,9 @@ def run(root: Path, manifest: dict) -> CheckResult:
         if not (root / relative_path).is_file():
             messages.append(f"Missing required document: {relative_path}")
 
+    ignored_dirs = {".git", "node_modules", ".next", "coverage"}
     for source_path in root.rglob("*.md"):
-        if ".git" in source_path.parts:
+        if not ignored_dirs.isdisjoint(source_path.parts):
             continue
         source_text = source_path.read_text(encoding="utf-8")
         for target in markdown_targets(source_text):
@@ -54,4 +55,3 @@ def markdown_targets(text: str) -> list[str]:
 
 def bare_doc_targets(text: str) -> list[str]:
     return sorted(set(match.group(0) for match in BARE_DOC_PATH_RE.finditer(text)))
-

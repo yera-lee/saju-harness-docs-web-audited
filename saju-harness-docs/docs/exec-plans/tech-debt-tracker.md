@@ -131,3 +131,52 @@ Needed:
 
 Priority:
 - Medium before public MVP
+
+### TD-009: Wire Onboarding UI to API Flow
+
+Status: open
+
+Current:
+- Onboarding form validates client-side and routes to `/analyzing`.
+- API handlers exist for birth profile and first report creation.
+
+Needed:
+- submit onboarding payload to `POST /api/birth-profiles`
+- call `POST /api/reports/first-love`
+- persist report_id through analyzing flow
+- navigate to generated report URL
+
+Priority:
+- High for completing Slice 1 vertical flow
+
+### TD-010: E2E Browser Regression Tests
+
+Status: open
+
+Current:
+- Unit and contract tests cover validation, safety, placeholder report structure, and safe API errors.
+
+Needed:
+- browser test for landing to onboarding
+- browser test for onboarding validation error
+- browser test for analyzing/report/CTA path
+- mobile viewport smoke check
+
+Priority:
+- High before MVP release
+
+### TD-011: Session-Bound Report Access Implementation
+
+Status: open
+
+Current:
+- Access control is documented.
+- Current in-memory API handlers are placeholder-level.
+
+Needed:
+- signed guest session cookie
+- report owner/session check
+- unauthorized and unknown report behavior parity
+
+Priority:
+- High before public MVP release
