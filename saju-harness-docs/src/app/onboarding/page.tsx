@@ -26,7 +26,7 @@ export default function OnboardingPage() {
     setInput((current) => ({ ...current, [key]: value }));
   }
 
-  function submit(event: React.FormEvent<HTMLFormElement>) {
+  async function submit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setError(null);
     const result = validateBirthProfileInput(input);
@@ -34,8 +34,26 @@ export default function OnboardingPage() {
       setError(result.issues[0]?.message ?? "입력값을 확인해주세요.");
       return;
     }
-    setSubmitting(true);
-    router.push("/analyzing");
+    try {
+      setSubmitting(true);
+      const profileResponse = await fetch("/api/birth-profiles", {
+        body: JSON.stringify(input),
+        headers: { "content-type": "application/json" },
+        method: "POST"
+      });
+      const profilePayload = await profileResponse.json();
+
+      if (!profileResponse.ok || !profilePayload.ok) {
+        setError(profilePayload.error?.message ?? "입력 정보를 저장하지 못했어요.");
+        setSubmitting(false);
+        return;
+      }
+
+      router.push(`/analyzing?birth_profile_id=${profilePayload.data.birth_profile_id}`);
+    } catch {
+      setError("잠시 후 다시 시도해주세요.");
+      setSubmitting(false);
+    }
   }
 
   return (

@@ -151,6 +151,9 @@ Completed:
 - report rendering page
 - compatibility CTA page
 - API route handlers for birth profile and first report flow
+- onboarding submit calls `POST /api/birth-profiles`
+- analyzing route calls `POST /api/reports/first-love` and navigates to the generated report
+- report page loads by generated `reportId`
 - safe API error shape
 - Vitest test setup
 - automated evidence for 15 acceptance criteria
@@ -162,18 +165,18 @@ Verified:
 - `npm audit --json`: 0 vulnerabilities
 - `make harness-check`: PASS
 - `make application-harness-check`: PASS
+- dev HTTP smoke: `/`, `/onboarding`, `/analyzing`, `/compatibility/start`, generated `/reports/:reportId`: PASS
+- dev API smoke: `POST /api/birth-profiles` -> `POST /api/reports/first-love` -> `GET /api/reports/:reportId`: PASS
 
 Remaining:
 - production persistence
 - real guest session authorization
-- report generation failure UI and retry behavior beyond placeholder route
-- e2e/browser regression tests
+- browser E2E regression tests for the full client navigation path
 - real saju calculation engine
 - LLM report generation
 - full compatibility report
 
 Current risks:
 - in-memory repositories are not suitable for public release
-- report page currently renders a demo placeholder report
-- onboarding submit currently routes to analyzing without calling the API
 - report access control is documented but only placeholder-level in code
+- analyzing retry UI is implemented, but only handler-level failure behavior is automated

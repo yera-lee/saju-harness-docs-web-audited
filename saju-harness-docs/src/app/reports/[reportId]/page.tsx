@@ -1,8 +1,18 @@
+import { notFound } from "next/navigation";
 import { PageShell, PrimaryLink } from "@/components/PageShell";
-import { createPlaceholderReportFixture } from "@/application/fixture";
+import { runtime } from "@/application/runtime";
 
-export default async function ReportPage() {
-  const report = await createPlaceholderReportFixture();
+type ReportPageProps = {
+  params: Promise<{ reportId: string }>;
+};
+
+export default async function ReportPage({ params }: ReportPageProps) {
+  const { reportId } = await params;
+  const report = await runtime.repositories.reports.findById(reportId);
+
+  if (!report) {
+    notFound();
+  }
 
   return (
     <PageShell>
