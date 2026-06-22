@@ -132,3 +132,53 @@ After implementation, update:
 
 Before implementation, use:
 - docs/implementation/slice-1-plan.md
+
+## Current Implementation Status
+
+Updated: 2026-06-19
+
+Completed:
+- Next.js TypeScript app scaffold
+- Tailwind setup
+- required route skeletons
+- responsive landing page
+- responsive onboarding form
+- validation helpers
+- repository interfaces and in-memory adapters
+- placeholder calculation engine
+- placeholder interpretation engine
+- safety scanner/reviewer
+- report rendering page
+- compatibility CTA page
+- API route handlers for birth profile and first report flow
+- onboarding submit calls `POST /api/birth-profiles`
+- analyzing route calls `POST /api/reports/first-love` and navigates to the generated report
+- report page loads by generated `reportId`
+- safe API error shape
+- Vitest test setup
+- Playwright desktop/mobile E2E setup
+- automated evidence for 21 acceptance criteria
+
+Verified:
+- `npm run test:evidence`: PASS
+- `npm run test:e2e`: PASS
+- `npm test`: PASS
+- `npm run build`: PASS
+- `npm audit --json`: 0 vulnerabilities
+- `make harness-check`: PASS
+- `make application-harness-check`: PASS
+- dev HTTP smoke: `/`, `/onboarding`, `/analyzing`, `/compatibility/start`, generated `/reports/:reportId`: PASS
+- dev API smoke: `POST /api/birth-profiles` -> `POST /api/reports/first-love` -> `GET /api/reports/:reportId`: PASS
+
+Remaining:
+- production persistence
+- real guest session authorization
+- real saju calculation engine
+- LLM report generation
+- full compatibility report
+
+Current risks:
+- in-memory repositories are not suitable for public release
+- report access control is documented but only placeholder-level in code
+- E2E tests cover browser flow, but persistence and authorization remain placeholder-level
+- Placeholder report tests cover unexplained domain term avoidance, not full glossary enforcement

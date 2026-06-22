@@ -131,3 +131,52 @@ Needed:
 
 Priority:
 - Medium before public MVP
+
+### TD-009: Wire Onboarding UI to API Flow
+
+Status: closed
+
+Current:
+- Onboarding form validates client-side and submits to `POST /api/birth-profiles`.
+- `/analyzing` receives the generated birth profile id, calls `POST /api/reports/first-love`, and navigates to the generated report URL.
+- Report pages load by generated `reportId`.
+
+Evidence:
+- `npm run test:evidence`
+- `npm run build`
+- dev HTTP smoke: birth profile create -> first report create -> report read
+
+Priority:
+- Completed in Slice 1 implementation loop
+
+### TD-010: E2E Browser Regression Tests
+
+Status: closed
+
+Current:
+- Unit and contract tests cover validation, safety, placeholder report structure, safe API errors, and handler-level onboarding-to-report flow.
+- Playwright covers desktop and mobile Chrome for onboarding validation, onboarding -> analyzing -> generated report, CTA visibility, and retry button failure state.
+- Dev HTTP smoke has verified route availability and generated report read path.
+
+Evidence:
+- `npm run test:e2e`
+- `make application-harness-check`
+
+Priority:
+- Completed in Slice 1 implementation loop
+
+### TD-011: Session-Bound Report Access Implementation
+
+Status: open
+
+Current:
+- Access control is documented.
+- Current in-memory API handlers are placeholder-level.
+
+Needed:
+- signed guest session cookie
+- report owner/session check
+- unauthorized and unknown report behavior parity
+
+Priority:
+- High before public MVP release

@@ -1,2 +1,7 @@
 __pycache__/
 *.py[cod]
+node_modules/
+.next/
+coverage/
+playwright-report/
+test-results/
